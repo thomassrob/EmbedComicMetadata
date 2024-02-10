@@ -256,9 +256,9 @@ class ComicMetadata:
         if co.storyArcIdx:
             try:
                 if not python3 and isinstance(co.issue, unicode):
-                    mi.storyArcIdx = unicodedata.numeric(co.storyArcIdx)
+                    mi.storyArcIdx = round(unicodedata.numeric(co.storyArcIdx))
                 else:
-                    mi.storyArcIdx = float (co.storyArcIdx)
+                    mi.storyArcIdx = round(float (co.storyArcIdx))
             except ValueError:
                 pass
 

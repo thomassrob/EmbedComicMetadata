@@ -105,7 +105,11 @@ class ComicInfoXml:
         assign('AlternateSeries', md.alternateSeries)
         assign('AlternateNumber', md.alternateNumber)
         assign('StoryArc', md.storyArc)
-        assign('StoryArcNumber', md.storyArcIdx)
+        try:
+            assign('StoryArcNumber', round(md.storyArcIdx))
+        except:
+            assign('StoryArcNumber', 0)
+
         assign('SeriesGroup', md.seriesGroup)
         assign('AlternateCount', md.alternateCount)
         assign('Summary', md.comments)
