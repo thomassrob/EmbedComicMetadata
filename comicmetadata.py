@@ -185,6 +185,7 @@ class ComicMetadata:
         role("Editor", field(prefs['editor_column']))
         # others
         update_field("storyArc", field(prefs['storyarc_column']))
+        update_field("storyArcIdx", field(prefs['storyarc_column']+"_index"))
         update_field("characters", field(prefs['characters_column']))
         update_field("teams", field(prefs['teams_column']))
         update_field("locations", field(prefs['locations_column']))
@@ -252,6 +253,15 @@ class ComicMetadata:
                     mi.series_index = float(co.issue)
             except ValueError:
                 pass
+        if co.storyArcIdx:
+            try:
+                if not python3 and isinstance(co.issue, unicode):
+                    mi.storyArcIdx = unicodedata.numeric(co.storyArcIdx)
+                else:
+                    mi.storyArcIdx = float (co.storyArcIdx)
+            except ValueError:
+                pass
+
         # pub date
         puby = co.year
         pubm = co.month
@@ -280,6 +290,7 @@ class ComicMetadata:
         update_column(prefs['editor_column'], role(EDITOR))
         # others
         update_column(prefs['storyarc_column'], co.storyArc)
+        update_column(prefs['storyarc_column']+"_index", co.storyArcIdx)
         update_column(prefs['characters_column'], co.characters)
         update_column(prefs['teams_column'], co.teams)
         update_column(prefs['locations_column'], co.locations)

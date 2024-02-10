@@ -105,6 +105,7 @@ class ComicInfoXml:
         assign('AlternateSeries', md.alternateSeries)
         assign('AlternateNumber', md.alternateNumber)
         assign('StoryArc', md.storyArc)
+        assign('StoryArcNumber', md.storyArcIdx)
         assign('SeriesGroup', md.seriesGroup)
         assign('AlternateCount', md.alternateCount)
         assign('Summary', md.comments)
@@ -260,6 +261,7 @@ class ComicInfoXml:
         md.pageCount = xlate('PageCount')
         md.scanInfo = xlate('ScanInformation')
         md.storyArc = xlate('StoryArc')
+        md.storyArcIdx = xlate('StoryArcNumber')
         md.seriesGroup = xlate('SeriesGroup')
         md.maturityRating = xlate('AgeRating')
 

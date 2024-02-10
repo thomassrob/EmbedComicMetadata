@@ -76,6 +76,7 @@ class GenericMetadata:
         self.maturityRating  = None
 
         self.storyArc        = None
+        self.storyArcIdx     = None
         self.seriesGroup     = None
         self.scanInfo        = None
 
@@ -135,6 +136,7 @@ class GenericMetadata:
         assign("blackAndWhite",     new_md.blackAndWhite)
         assign("maturityRating",    new_md.maturityRating)
         assign("storyArc",          new_md.storyArc)
+        assign("storyArcIdx",       new_md.storyArcIdx)
         assign("seriesGroup",       new_md.seriesGroup)
         assign("scanInfo",          new_md.scanInfo)
         assign("characters",        new_md.characters)
@@ -283,6 +285,7 @@ class GenericMetadata:
             add_attr_string("blackAndWhite")
         add_attr_string("maturityRating")
         add_attr_string("storyArc")
+        add_attr_string("storyArcIdx")
         add_attr_string("seriesGroup")
         add_attr_string("scanInfo")
         add_attr_string("characters")
